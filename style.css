@@ -1,50 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont,;
+  background:linear-gradient(135deg, #f5f5f0 0%, #f9f9f7 100%);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-article {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 20px;
-  max-width: 400px;
-  width: 90%;
+}
+
+article [data-testid="test-profile-card"] {
+  background: #fefdfd;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  padding: 50px 40px;
+  max-width: 500px;
+  width: 100%;
+}
+
+header {
+  display:flex;
+  align-items:center;
   text-align: center;
+  margin-bottom: 30px;
+  flex-direction: column;
 }
 
-img {
-  width: 120px;
-  height: 120px;
+figure {
+    display: flex;
+    align-items: center;
+    margin: 0 0 25px 0;
+    flex-direction: column;
+}
+
+img [data-testid="test-user-avatar"]{
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
-ul {
+figcaption {
+    font-size: 12px;
+    color: #999;
+    margin-top: 8px;
+}
+
+h2[data-testid="test-user-name"]{
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #6b3e3e;
+    font-size: 28px;
+    letter-spacing: 0.3px;
+}
+
+p[data-testid="test- user-bio"]{
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.time-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 8px;
+     background: #0d0e0dff;
+     color:  #fefdfd; 
+}
+
+span[data-testid="test-user-time"]{
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color:  #fefdfd; 
+    letter-spacing: 0.5px;
+}
+
+.divider {
+height: 1px;
+background: #e8e6e1;
+margin: 25px 0;
+}
+
+.connect-title {
+  font-size: 14px;
+  color: #0e0505ff;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav[aria-label="Social media profiles"]{
+    margin-bottom: 20px;
+}
+
+ul[data-testid="test-user-social-links"] {
   list-style-type: none;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-a {
-  text-decoration: none;
-  color: #0077cc;
+ul[data-testid="test-user-social-links"] li a {
+    display: inline-block;
+    text-decoration: none;
+    color:white;
+    background-color: #040505ff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
-a:hover {
-  text-decoration: underline;
+
+ul[data-testid="test-user-social-links"] li a:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,119,182,0.3);
+}
+
+ul[data-testid="test-user-social-links"] li a:hover{
+    outline: none;
+    border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45,106,79,0.2);
+}
+
+section {
+  text-align: left;
+  border-left: 3px solid #343534ff; 
+  padding-left: 20px;
+}
+section h3 {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #0c0b0bff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+ul[data-testid="test-user-hobbies"], 
+ul[data-testid="test-user-dislikes"] {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 8px;
+}
+
+ul[data-testid="test-user-hobbies"] li, 
+ul[data-testid="test-user-dislikes"] li {
+   padding: 6px 12px;
+   border-radius: 16px;
+   font-size: 13px;
+   font-weight: 500;
+} 
+
+ul[data-testid="test-user-hobbies"] li {
+    background-color: #e3f2fd;
+    color: #0077b6;
+}
+
+ul[data-testid="test-user-dislikes"] li {
+    background-color: #ffebee;
+    color: #3b0909ff;
+}
+
+*:focus-visible {
+    outline: 2px solid #0077b6;
+    outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
-  article {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    body {
+        min-height: 100vh;
+    }
+
+  article[data-testid="test-profile-card"] {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+    max-width: 700px;
+    padding: 30px;
+  }
+
+  figure {
+    text-align: center;
+    grid-column: 1;
+  }
+
+  .profile-content{
+    grid-column: 2;
+  }
+
+  h2[data-testid="test-user-name"] {
     text-align: left;
   }
-  figure {
-    margin-right: 20px;
+
+  p[data-testid="test-user-bio"] {
+    text-align: left;
   }
+  nav[aria-label="Social media profiles"] {
+    justify-content: flex-start;
+  }
+  img[data-testid="test-user-avatar"] {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+    article[data-testid="test-profile-card"] {
+        padding: 15px;
+        width: 95%;
+    }
+
+    h2[data-testid="test-user-name"]{
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    p[data-testid="test-user-bio"] {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    img[data-testid="test-user-avatar"] {
+        width: 100px;
+        height: 100px;
+    }
+
+    ul[data-testid="test-user-hobbies"] li, 
+    ul[data-testid="test-user-dislikes"] li {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    section h3{
+        font-size: 14px;
+    }
 }

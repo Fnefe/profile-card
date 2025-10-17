@@ -8,12 +8,6 @@
     </head>
     <body>
          <article data-testid="test-profile-card" class="profile-card">
-
-    <header>
-      <h2 data-testid="test-user-name">Favour Kenneth</h2>
-    </header>
-     <p data-testid="test-user-bio"> I am a Nutritionist and Technical writer who enjoys designing accessible digital content.</p>
-    
     <figure>
       <img
         src="myphoto.jpg"
@@ -21,19 +15,20 @@
         data-testid="test-user-avatar"
       />
 
-      <figcaption> Kenneth Favour - Nutritionist & Developer</figcaption>
+      <figcaption>Profile Picture</figcaption>
     </figure>
-    <p>Current Time (ms): <span data-testid="test-user-time"></span></p>
-     <nav aria-label="Social media profiles">
-      <ul data-testid="test-user-social-links" class="social-links">
-        <li>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">Twitter</a>
-        </li>
-        <li>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="profile-content">
+    <header>
+      <h2 data-testid="test-user-name">Favour Kenneth</h2>
+    </header>
+ <hr class="divider" aria-hidden="true"></hr>
+
+     <p data-testid="test-user-bio"> I am a Nutritionist and Frontend developer who enjoys designing accessible digital content.</p>
+     
+     <div class="time-display"> Current Time (ms):
+    <span data-testid="test-user-time"></span>
+     </div>
+
     <section>
       <h3>Hobbies</h3>
       <ul data-testid="test-user-hobbies">
@@ -53,7 +48,25 @@
         <li>Gossips</li>
         </ul>
     </section>
+    <hr class="divider" aria-hidden="true"></hr>
 
+    <div class="connect-title"> Connect with me</div>
+
+    <nav aria-label="Social media profiles">
+      <ul data-testid="test-user-social-links" class="social-links">
+        <li>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter" aria-label="Visit Twitter profile">Twitter</a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin" aria-label="Visit Linkedin profile">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github" aria-label="Visit GitHub profile">GitHub</a>
+        </li>
+      </ul>
+
+    </nav>
+    </div>
          </article>
 
         <script src="script.js"></script>
