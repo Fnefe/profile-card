@@ -30,4 +30,7 @@ A responsive and accessible profile card built with semantic HTML, CSS, and Java
 
 ## Live Demo
 Check out the live version of this project: [profile Card on Netlify](https://nefefk-profile-card.netlify.app).
+Project update: 
+- [multiple pages application](https://nefefk-multiple-page-application.netlify.app/), 
+- [Multiple pages application gitpages](https://fnefe.github.io/profile-card/).
 
