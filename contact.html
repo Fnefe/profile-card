@@ -7,18 +7,20 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-      <nav class="main-nav" aria-label="Main-Navigation">
-        <ul>
-          <li><a href="index.html" class="nav-link active">Home Page</a></li>
-          <li><a href="about.html" class="nav-link">About Me</a></li>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+       <nav aria-label="Main-Navigation">
+        <ul class="main-nav">
+          <li><a href="index.html" class="nav-link">Home Page</a></li>
+          <li><a href="about.html" class="nav-link active">About Me</a></li>
           <li><a href="contact.html" class="nav-link">Contact Us</a></li>
         </ul>
       </nav>
 
-      <main id="main-content" class="contact-container">
+      <main id="main-content" class="pages-container">
         <section id="contact">
             <h1>Contact Us</h1>
-            <p>I would love to hear from you. Fill out the form below and I will get back to you soon.</p>
+            <p class="contact-intro">I would love to hear from you. Fill out the form below and I will get back to you soon.</p>
 
             <form id="contactForm" novalidate>
 
@@ -52,6 +54,7 @@
 
                 <div class="form-group">
                     <label for="contactSubject">
+                        Subject
                         <span class="required" aria-label="required">*</span>
                     </label>
                     <input
