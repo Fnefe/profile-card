@@ -1,9 +1,9 @@
 function updateTime() {
     const timeElement = document.querySelector('[data-testid="test-user-time"]');
-if (timeElement)
+if (timeElement) {
 timeElement.textContent = Date.now();
     }
-
+}
 
 updateTime();
 
@@ -18,10 +18,15 @@ setInterval(updateTime, 1000);
     function toogleError (input, show) {
         const errorId = input.getAttribute('aria-describedby');
         const errorElement = document.getElementById(errorId);
-        if (show)  {
+        if (errorElement) {
+         if (show)  {
+            input.classList.add('error');
+            errorElement.classList.remove('show');
+        } else {
             input.classList.add('error');
             errorElement.classList.remove('show');
         }
+     }
     }
 
     function validateField(input)  {
@@ -45,22 +50,22 @@ setInterval(updateTime, 1000);
     }
 
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
         let isValid = true;
 
-        formInputs.forEach((input) => {
+        formInputs.forEach(function(input) {
             const valid = validateField(input);
             toogleError(input, !valid);
-            if (valid) isValid = false;
+            if (!valid) isValid = false;
         });
 
         if (isValid) {
             successMessage.classList.add('show');
             contactForm.requestFullscreen();
 
-             setTimeout(() => { 
+             setTimeout(function() { 
             successMessage.classList.remove('show'); 
         }, 5000); 
         }
@@ -74,7 +79,6 @@ formInputs.forEach(input => {
             toogleError(input, valid);
         }
     });
-       
     
      input.addEventListener('input', () => { 
         if (input.classList.contains('error')) { 
@@ -82,5 +86,5 @@ formInputs.forEach(input => {
             if (valid) toogleError(input, false);
          } 
         }); 
-    }); 
+    });
 }
